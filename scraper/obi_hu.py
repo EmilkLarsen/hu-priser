@@ -44,7 +44,7 @@ def handle(u, html):
         return []
     nm = re.search(r'"name"\s*:\s*"([^"]{5,120})"', html)
     sku = u.rstrip("/").split("/p/")[-1]
-    og = re.search(r'og:image"\s*content="([^"]+)"', html)
+    og = re.search(r'(https://bilder\.obi\.[a-z.]*/[^"\s>]+)', html)
     image = og.group(1) if og else None
     return [{
         "chain": "obi_hu",
