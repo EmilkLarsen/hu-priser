@@ -44,6 +44,8 @@ def handle(u, html):
         return []
     nm = re.search(r'"name"\s*:\s*"([^"]{5,120})"', html)
     sku = u.rstrip("/").split("/p/")[-1]
+    og = re.search(r'og:image"\s*content="([^"]+)"', html)
+    image = og.group(1) if og else None
     return [{
         "chain": "obi_hu",
         "country": "hu",
@@ -54,7 +56,7 @@ def handle(u, html):
         "url": u,
         "price": p,
         "in_stock": None,
-        "image": None,
+        "image": image,
     }]
 
 
