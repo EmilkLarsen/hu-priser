@@ -3,7 +3,7 @@ index -> product sitemaps; URLs /<cat>/<slug>/p/<id>; JSON price blob."""
 import re
 import gzip
 import urllib.request
-from common import sitemap_urls, sane_price, valid_ean, write_jsonl, pmap
+from common import get, sitemap_urls, sane_price, valid_ean, write_jsonl, pmap
 
 BASE = "https://www.obi.hu"
 OUT = "data/latest/obi_hu.jsonl"
