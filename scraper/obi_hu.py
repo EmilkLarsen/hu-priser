@@ -3,7 +3,7 @@ index -> product sitemaps; URLs /<cat>/<slug>/p/<id>; JSON price blob."""
 import re
 import gzip
 import urllib.request
-from common import get, sitemap_urls, sane_price, valid_ean, write_jsonl, pmap
+from common import get, sitemap_urls, sane_price, valid_ean, write_jsonl, pmap, scrape_with_checkpoint
 
 BASE = "https://www.obi.hu"
 OUT = "data/latest/obi_hu.jsonl"
@@ -60,14 +60,8 @@ def handle(u, html):
     }]
 
 
-def scrape(limit=None):
-    def work(u):
-        try:
-            return handle(u, get(u))
-        except Exception as e:
-            print(f"  ! {u}: {e}")
-            return []
-    return pmap(work, fetch_url_list(limit))
+def scrape(limit=None, deadline=None):
+    return scrape_with_checkpoint("obi_hu", fetch_url_list(limit), handle, limit, deadline)
 
 
 if __name__ == "__main__":
