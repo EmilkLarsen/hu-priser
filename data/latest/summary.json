@@ -3,11 +3,11 @@
  "total_rows": 96711,
  "chains": {
   "obi_hu": {
-   "products": 75710,
+   "products": 96441,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18003.6
+   "seconds": 10146.2
   }
  }
 }
