@@ -1,13 +1,13 @@
 {
  "date": "2026-10-24",
- "total_rows": 96665,
+ "total_rows": 97842,
  "chains": {
   "obi_hu": {
-   "products": 75684,
+   "products": 97827,
    "price_changes": 0,
    "suspicious_changes": 0,
    "expired": 0,
-   "seconds": 18004.2
+   "seconds": 10747.9
   }
  }
 }
